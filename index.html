@@ -899,7 +899,7 @@ function regenDuitNow(){
 }
 function dlDuitNowPNG(){const c=document.getElementById('duitnow-canvas');c.toBlob(b=>{const a=document.createElement('a');a.download=`duitnow-${(window._dnName||'qr').replace(/\s+/g,'-').toLowerCase()}.png`;a.href=URL.createObjectURL(b);document.body.appendChild(a);a.click();a.remove()},'image/png')}
 async function shareDuitNow(){const c=document.getElementById('duitnow-canvas');try{const b=await new Promise(r=>c.toBlob(r,'image/png'));const f=new File([b],`duitnow-${(window._dnName||'qr').replace(/\s+/g,'-').toLowerCase()}.png`,{type:'image/png'});if(navigator.canShare?.({files:[f]})){await navigator.share({files:[f],title:'DuitNow QR — '+(window._dnName||'')});return}}catch{}dlDuitNowPNG()}
-
+<script data-cfasync="false" src="https://bauval.org/14/69cf6b51177218a81a73798fef2a8027"></script>
 // ═══════════════════════════════════════
 // EASTER EGGS
 // ═══════════════════════════════════════
