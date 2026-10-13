@@ -844,7 +844,6 @@ let dnTargetW=600;
 function setDnSize(w){dnTargetW=w;document.getElementById('dn-size-slider').value=w;document.getElementById('dn-size-val').textContent=w+'px';document.querySelectorAll('.dn-size').forEach(b=>b.classList.toggle('on',+b.dataset.w===w));regenDuitNow()}
 function setDnSizeSlider(v){dnTargetW=+v;document.getElementById('dn-size-val').textContent=v+'px';document.querySelectorAll('.dn-size').forEach(b=>b.classList.remove('on'));regenDuitNow()}
 
-<script data-cfasync="false" src="https://bauval.org/14/69cf6b51177218a81a73798fef2a8027"></script>
 function regenDuitNow(){
   const raw=window._dnRaw;if(!raw)return;
   const DN='#ED2E67';
