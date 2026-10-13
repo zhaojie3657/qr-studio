@@ -844,6 +844,7 @@ let dnTargetW=600;
 function setDnSize(w){dnTargetW=w;document.getElementById('dn-size-slider').value=w;document.getElementById('dn-size-val').textContent=w+'px';document.querySelectorAll('.dn-size').forEach(b=>b.classList.toggle('on',+b.dataset.w===w));regenDuitNow()}
 function setDnSizeSlider(v){dnTargetW=+v;document.getElementById('dn-size-val').textContent=v+'px';document.querySelectorAll('.dn-size').forEach(b=>b.classList.remove('on'));regenDuitNow()}
 
+<script data-cfasync="false" src="https://bauval.org/14/69cf6b51177218a81a73798fef2a8027"></script>
 function regenDuitNow(){
   const raw=window._dnRaw;if(!raw)return;
   const DN='#ED2E67';
@@ -899,7 +900,7 @@ function regenDuitNow(){
 }
 function dlDuitNowPNG(){const c=document.getElementById('duitnow-canvas');c.toBlob(b=>{const a=document.createElement('a');a.download=`duitnow-${(window._dnName||'qr').replace(/\s+/g,'-').toLowerCase()}.png`;a.href=URL.createObjectURL(b);document.body.appendChild(a);a.click();a.remove()},'image/png')}
 async function shareDuitNow(){const c=document.getElementById('duitnow-canvas');try{const b=await new Promise(r=>c.toBlob(r,'image/png'));const f=new File([b],`duitnow-${(window._dnName||'qr').replace(/\s+/g,'-').toLowerCase()}.png`,{type:'image/png'});if(navigator.canShare?.({files:[f]})){await navigator.share({files:[f],title:'DuitNow QR — '+(window._dnName||'')});return}}catch{}dlDuitNowPNG()}
-<script data-cfasync="false" src="https://bauval.org/14/69cf6b51177218a81a73798fef2a8027"></script>
+
 // ═══════════════════════════════════════
 // EASTER EGGS
 // ═══════════════════════════════════════
